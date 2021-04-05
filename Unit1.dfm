@@ -51,6 +51,7 @@ object Form1: TForm1
       Height = 25
       Caption = #1042#1086#1081#1090#1080
       TabOrder = 2
+      OnClick = Button1Click
     end
   end
   object GroupBox2: TGroupBox
@@ -68,7 +69,7 @@ object Form1: TForm1
     TabOrder = 1
     object Edit3: TEdit
       Left = 32
-      Top = 48
+      Top = 64
       Width = 273
       Height = 31
       TabOrder = 0
@@ -76,29 +77,21 @@ object Form1: TForm1
     end
     object Edit4: TEdit
       Left = 32
-      Top = 96
+      Top = 128
       Width = 273
       Height = 31
+      PasswordChar = '*'
       TabOrder = 1
       TextHint = #1060#1048#1054
     end
     object Edit5: TEdit
       Left = 32
-      Top = 144
+      Top = 192
       Width = 273
       Height = 31
       PasswordChar = '*'
       TabOrder = 2
       TextHint = #1055#1088#1080#1076#1091#1084#1072#1081#1090#1077' '#1087#1072#1088#1086#1083#1100
-    end
-    object Edit6: TEdit
-      Left = 32
-      Top = 192
-      Width = 273
-      Height = 31
-      PasswordChar = '*'
-      TabOrder = 3
-      TextHint = #1055#1086#1074#1090#1086#1088#1080#1090#1077' '#1087#1072#1088#1086#1083#1100
     end
     object Button2: TButton
       Left = 32
@@ -106,7 +99,43 @@ object Form1: TForm1
       Width = 273
       Height = 25
       Caption = #1047#1072#1088#1077#1075#1080#1089#1090#1088#1080#1088#1086#1074#1072#1090#1100#1089#1103
-      TabOrder = 4
+      TabOrder = 3
+      OnClick = Button2Click
+    end
+  end
+  object MyConnection: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\'#1086#1072#1080#1087'\CopyCentr.m' +
+      'db;Persist Security Info=False'
+    LoginPrompt = False
+    Mode = cmShareDenyNone
+    Provider = 'Microsoft.Jet.OLEDB.4.0'
+    Left = 680
+    Top = 304
+  end
+  object ADOUser: TADOTable
+    Active = True
+    Connection = MyConnection
+    CursorType = ctStatic
+    TableName = 'User_'
+    Left = 648
+    Top = 304
+    object ADOUserid: TAutoIncField
+      FieldName = 'id'
+      ReadOnly = True
+    end
+    object ADOUserfio: TWideStringField
+      FieldName = 'fio'
+      Size = 255
+    end
+    object ADOUserusername: TWideStringField
+      FieldName = 'username'
+      Size = 255
+    end
+    object ADOUserpassword: TWideStringField
+      FieldName = 'password'
+      Size = 255
     end
   end
 end
