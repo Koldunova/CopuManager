@@ -17,27 +17,27 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 //---------------------------------------------------------------------------
 void __fastcall TForm1::Button2Click(TObject *Sender)
 {
+	int flag=0;
+	ADOUser->RecNo=1;
 	if( (Edit3->Text=="" ) || (Edit4->Text=="") || (Edit5->Text=="")){
 		ShowMessage("Заполните поля для регистрации");
 	}else{
+			while (ADOUser->RecNo!= ADOUser->RecordCount){
+				if (ADOUser->FieldByName("username")->AsString==Edit3->Text){
+					flag=1;
+					ShowMessage("Такой пользователь уже существует");
+					break;
+				}
+                ADOUser->Next();
+			}
 
-		if(Edit4->Text==Edit5->Text)   {
-			if (ADOUser->FieldByName("username")->AsString==Edit3->Text){
-				ShowMessage("Такой пользователь уже существует");
-			}else{
-
-				ADOUser->Insert();
+			if(flag==0){
+                ADOUser->Insert();
 				ADOUser->FieldByName("username")->AsString= Edit3->Text;
 				ADOUser->FieldByName("password")->AsString= Edit4->Text;
 				ADOUser->Post();
 				ShowMessage("Регистрация прошла успешно");
-
 			}
-		}else{
-
-		   ShowMessage("Пароли не совпадают");
-
-		}
 	}
 
 }
@@ -46,20 +46,31 @@ void __fastcall TForm1::Button2Click(TObject *Sender)
 
 void __fastcall TForm1::Button1Click(TObject *Sender)
 {
-	if( (Edit1->Text!="" ) || (Edit2->Text!="") ){
-		if (ADOUser->FieldByName("username")->AsString==Edit1->Text
-			&& ADOUser->FieldByName("password")->AsString==Edit2->Text){
-				Form2->ShowModal();
+		int flag=0;
+		ADOUser->RecNo=1;
+		if( (Edit1->Text!="" ) || (Edit2->Text!="") ){
+			while (ADOUser->RecNo!= ADOUser->RecordCount){
+				if (ADOUser->FieldByName("username")->AsString==Edit1->Text
+					&& ADOUser->FieldByName("password")->AsString==Edit2->Text){
+						Edit2->Text="";
+						Form2->ShowModal();
+						flag=1;
+						break;
+				}
 
-			} else {
-
-				ShowMessage("Неверный логин или пароль");
+				ADOUser->Next();
 			}
-	}   else {
 
-		ShowMessage("Заполните поля");
+		}else {
+			ShowMessage("Заполните поля");
 
-	}
+		}
+
+		if (flag==0){
+			ShowMessage("Неверный логин или пароль");
+		}
+
+
 }
 //---------------------------------------------------------------------------
 

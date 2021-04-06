@@ -48,7 +48,7 @@ object Form1: TForm1
       Left = 32
       Top = 256
       Width = 249
-      Height = 25
+      Height = 33
       Caption = #1042#1086#1081#1090#1080
       TabOrder = 2
       OnClick = Button1Click
@@ -80,7 +80,6 @@ object Form1: TForm1
       Top = 128
       Width = 273
       Height = 31
-      PasswordChar = '*'
       TabOrder = 1
       TextHint = #1060#1048#1054
     end
@@ -97,7 +96,7 @@ object Form1: TForm1
       Left = 32
       Top = 256
       Width = 273
-      Height = 25
+      Height = 33
       Caption = #1047#1072#1088#1077#1075#1080#1089#1090#1088#1080#1088#1086#1074#1072#1090#1100#1089#1103
       TabOrder = 3
       OnClick = Button2Click
