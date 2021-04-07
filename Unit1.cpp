@@ -53,7 +53,9 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 				if (ADOUser->FieldByName("username")->AsString==Edit1->Text
 					&& ADOUser->FieldByName("password")->AsString==Edit2->Text){
 						Edit2->Text="";
+						Form2->Edit1->Text=ADOUser->FieldByName("fio")->AsString;
 						Form2->ShowModal();
+
 						flag=1;
 						break;
 				}

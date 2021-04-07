@@ -14,6 +14,8 @@
 #include <Vcl.Grids.hpp>
 #include <Vcl.DBCtrls.hpp>
 #include <Vcl.ExtCtrls.hpp>
+#include <Data.FMTBcd.hpp>
+#include <Data.SqlExpr.hpp>
 //---------------------------------------------------------------------------
 class TForm2 : public TForm
 {
@@ -21,7 +23,6 @@ __published:	// IDE-managed Components
 	TButton *Button1;
 	TButton *Button2;
 	TButton *Button4;
-	TADOConnection *ADOConnection1;
 	TDataSource *DataSource1;
 	TDBNavigator *DBNavigator1;
 	TADOTable *ADOTable1;
@@ -31,8 +32,41 @@ __published:	// IDE-managed Components
 	TDBNavigator *DBNavigator2;
 	TDBGrid *DBGrid1;
 	TDBGrid *DBGrid2;
+	TGroupBox *GroupBox1;
+	TDBGrid *DBGrid3;
+	TADOTable *ADOTable3;
+	TDataSource *DataSource3;
+	TDBNavigator *DBNavigator3;
+	TDBGrid *DBGrid4;
+	TLabel *Label2;
+	TLabel *Label3;
+	TLabel *Label4;
+	TButton *Button3;
+	TLabel *Label5;
+	TLabel *Label6;
+	TLabel *Label7;
+	TLabel *Label8;
+	TLabel *Label9;
+	TCheckBox *CheckBox1;
+	TEdit *Edit1;
+	TEdit *Edit2;
+	TEdit *Edit3;
+	TEdit *Edit4;
+	TEdit *Edit5;
+	TLabel *Label10;
+	TButton *Button5;
+	TStringGrid *StringGrid1;
+	TLabel *Label11;
+	TEdit *Edit6;
+	TLabel *Label12;
+	TButton *Button6;
+	TADOConnection *ADOConnection1;
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);
+	void __fastcall Button4Click(TObject *Sender);
+	void __fastcall Button3Click(TObject *Sender);
+	void __fastcall Button5Click(TObject *Sender);
+	void __fastcall Button6Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm2(TComponent* Owner);
