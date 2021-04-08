@@ -52,8 +52,6 @@ __published:	// IDE-managed Components
 	TEdit *Edit2;
 	TEdit *Edit3;
 	TEdit *Edit4;
-	TEdit *Edit5;
-	TLabel *Label10;
 	TButton *Button5;
 	TStringGrid *StringGrid1;
 	TLabel *Label11;
@@ -61,12 +59,31 @@ __published:	// IDE-managed Components
 	TLabel *Label12;
 	TButton *Button6;
 	TADOConnection *ADOConnection1;
+	TADOTable *ADOTable4;
+	TADOTable *ADOTable5;
+	TLabel *Label13;
+	TButton *Button7;
+	TGroupBox *GroupBox2;
+	TLabel *Label21;
+	TStringGrid *StringGrid2;
+	TLabel *Label10;
+	TLabel *Label14;
+	TStringGrid *StringGrid3;
+	TLabel *Label15;
+	TEdit *Edit5;
+	TLabel *Label16;
+	TButton *Button8;
+	TADOTable *ADOTable6;
+	TButton *Button9;
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);
 	void __fastcall Button4Click(TObject *Sender);
 	void __fastcall Button3Click(TObject *Sender);
 	void __fastcall Button5Click(TObject *Sender);
 	void __fastcall Button6Click(TObject *Sender);
+	void __fastcall Button7Click(TObject *Sender);
+	void __fastcall Button8Click(TObject *Sender);
+	void __fastcall Button9Click(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
 	__fastcall TForm2(TComponent* Owner);
